@@ -31,9 +31,9 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="ServiceBus.AttachmentPlugin" Version="2.1.0" />
-    <PackageReference Include="Microsoft.Azure.KeyVault" Version="2.3.2" />
-    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.19.2" />
+    <PackageReference Include="ServiceBus.AttachmentPlugin" Version="[2.1.0, 3.0.0)" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="[2.3.2, 3.0.0)" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="[3.19.2, 4.0.0)" />
   </ItemGroup>
 
   <ItemGroup>
