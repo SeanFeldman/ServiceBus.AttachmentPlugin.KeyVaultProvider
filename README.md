@@ -1,12 +1,12 @@
 ![Icon](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/master/images/project-icon.png)
 
-### This is a KeyVault provider for  [ServiceBus.AttachmentPlugin add-in](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin)
+### This is a KeyVault provider for  [ServiceBus.AttachmentPlugin](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin) add-in
 
 License: [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/master/LICENSE)
 
 ### Nuget package
 
-[![NuGet Status](https://buildstats.info/nuget/ServiceBus.AttachmentPlugin?includePreReleases=true)](https://www.nuget.org/packages/ServiceBus.AttachmentPlugin.KeyVaultProvider/)
+[![NuGet Status](https://buildstats.info/nuget/ServiceBus.AttachmentPlugin.KeyVaultProvider?includePreReleases=true)](https://www.nuget.org/packages/ServiceBus.AttachmentPlugin.KeyVaultProvider/)
 
 Available here http://nuget.org/packages/ServiceBus.AttachmentPlugin.KeyVaultProvider
 
