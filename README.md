@@ -4,7 +4,7 @@
 
 License: [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/master/LICENSE)
 
-Build status: [![Develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider/master.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin) [![Master](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin/master.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider) 
+Build status: [![Develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider/master.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin) [![Develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin/develop.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider) 
 
 Opened issues: [![Issues](https://img.shields.io/github/issues-raw/badges/shields/website.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider)
 
