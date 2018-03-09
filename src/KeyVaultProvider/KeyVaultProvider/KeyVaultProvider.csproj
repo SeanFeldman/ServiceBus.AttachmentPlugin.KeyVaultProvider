@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>KeyVault provider for Microsoft Azure ServiceBus attachment plugin</Description>
+    <Version>0.1.0</Version>
+    <Authors>Sean Feldman</Authors>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <PackageTags>Azure;Service Bus;ServiceBus;.NET;AMQP;IoT;Queue;Topic;Attachment;Plugin</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/master/images/project-icon.png</PackageIconUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider</PackageProjectUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RepositoryUrl>https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider</RepositoryUrl>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
+    <RootNamespace>ServiceBus.AttachmentPlugin</RootNamespace>
+    <AssemblyName>ServiceBus.AttachmentPlugin.KeyVaultProvider</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <Target Name="IncludePDBsInPackage">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\$(AssemblyName).pdb" PackagePath="lib\$(TargetFramework)" />
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="ServiceBus.AttachmentPlugin" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Azure.KeyVault" Version="2.3.2" />
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="3.19.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net.Http" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Label="SourceLink to embed PDBs with the assembly">
+    <PackageReference Include="SourceLink.Create.GitHub" Version="2.6.0" PrivateAssets="All" />
+    <DotNetCliToolReference Include="dotnet-sourcelink-git" Version="2.1.2" />
+  </ItemGroup>
+
+</Project>
