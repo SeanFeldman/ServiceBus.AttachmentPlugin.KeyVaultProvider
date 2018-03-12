@@ -45,7 +45,18 @@ namespace ServiceBus.AttachmentPlugin
         /// For more details, see https://azure.microsoft.com/en-us/resources/samples/app-service-msi-keyvault-dotnet/
         /// </remarks>
         /// </summary>
-        public KeyVaultProvider() {}
+        /// <param name="secretIdentifier">KeyVault secret identifier.
+        /// <example>Possible formats:
+        /// Latest value https://key-vault-name.vault.azure.net/secrets/secret-name
+        /// Specific version https://key-vault-name.vault.azure.net/secrets/secret-name/version-id
+        /// </example>
+        /// </param>
+        public KeyVaultProvider(string secretIdentifier)
+        {
+            Guard.AgainstEmpty(nameof(secretIdentifier), secretIdentifier);
+
+            this.secretIdentifier = secretIdentifier;
+        }
 
         /// <summary>
         /// Retrieve Storage connection string using KeyVault.
