@@ -65,16 +65,16 @@ namespace ServiceBus.AttachmentPlugin
         {
             KeyVaultClient client;
 
-            if (string.IsNullOrEmpty(clientId) == false)
-            {
-                client = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(GetToken));
-            }
-            else
+            if (string.IsNullOrEmpty(clientId))
             {
                 var azureServiceTokenProvider = new AzureServiceTokenProvider();
                 var keyVaultTokenCallback = azureServiceTokenProvider.KeyVaultTokenCallback;
 
                 client = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(keyVaultTokenCallback));
+            }
+            else
+            {
+                client = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(GetToken));
             }
 
             // possible KeyVaultErrorException : https://docs.microsoft.com/en-us/azure/key-vault/key-vault-dotnet2api-release-notes#exceptions
