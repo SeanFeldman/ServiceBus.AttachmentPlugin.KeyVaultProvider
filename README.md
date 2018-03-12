@@ -26,7 +26,7 @@ Configuration and registration
 
 ```c#
 var provider = new KeyVaultProvider("client-id", "client-secret", "secret-identifier"); // secret-identifier only for MSI
-var configuration = new AzureStorageAttachmentConfiguration(new KeyVaultProvider("<secret-identifier>"));
+var configuration = new AzureStorageAttachmentConfiguration(provider);
 
 var queueClient = new QueueClient(...);
 queueClient.RegisterAzureStorageAttachmentPlugin(configuration);
