@@ -102,10 +102,4 @@ namespace ServiceBus.AttachmentPlugin
             return authenticationResult.AccessToken;
         }
     }
-
-    // TODO: remove when plugin has this contract
-    internal interface IProvideStorageConnectionString
-    {
-        Task<string> GetConnectionString();
-    }
 }
