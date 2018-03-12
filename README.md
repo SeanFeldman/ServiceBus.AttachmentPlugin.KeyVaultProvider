@@ -25,10 +25,18 @@ To Install from the Nuget Package Manager Console
 Configuration and registration
 
 ```c#
-var provider = new KeyVaultProvider("client-id", "client-secret", "secret-identifier");
-var config = new AzureStorageAttachmentConfiguration(provider);
-var sender = new MessageSender(...);
-sender.RegisterAzureStorageAttachmentPlugin(config);
+var provider = new KeyVaultProvider("client-id", "client-secret", "secret-identifier"); // secret-identifier only for MSI
+var configuration = new AzureStorageAttachmentConfiguration(new KeyVaultProvider("&lt;secret-identifier&gt;"));
+
+var queueClient = new QueueClient(...);
+queueClient.RegisterAzureStorageAttachmentPlugin(configuration);
+
+await queueClient.SendAsync(new Message(Encoding.UTF8.GetBytes("payload to transfer via storage account")));
+
+var messageReceiver = new MessageReceiver(...);
+messageReceiver.RegisterAzureStorageAttachmentPlugin(configuration);
+
+var message = await messageReceiver.ReceiveAsync();
 ```
 
 ## Icon
