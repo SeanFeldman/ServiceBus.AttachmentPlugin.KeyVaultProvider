@@ -34,6 +34,7 @@
     <PackageReference Include="ServiceBus.AttachmentPlugin" Version="[2.1.0, 3.0.0)" />
     <PackageReference Include="Microsoft.Azure.KeyVault" Version="[2.3.2, 3.0.0)" />
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="[3.19.2, 4.0.0)" />
+    <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.1.0-preview" />
   </ItemGroup>
 
   <ItemGroup>

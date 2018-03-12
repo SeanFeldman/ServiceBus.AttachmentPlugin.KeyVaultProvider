@@ -1,4 +1,6 @@
-﻿namespace ServiceBus.AttachmentPlugin
+﻿using Microsoft.Azure.Services.AppAuthentication;
+
+namespace ServiceBus.AttachmentPlugin
 {
     using System;
     using System.Threading.Tasks;
@@ -6,7 +8,7 @@
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
     /// <summary>
-    /// 
+    /// KeyVault connection string provider.
     /// </summary>
     public class KeyVaultProvider : IProvideStorageConnectionString
     {
@@ -15,11 +17,16 @@
         private readonly string secretIdentifier;
 
         /// <summary>
-        /// 
+        /// KeyVault connection string provider using application/client ID, client secret, and KeyVault secret identifier.
         /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="secretIdentifier"></param>
+        /// <param name="clientId">Application ID found in Azure Active Directory (App Registration).</param>
+        /// <param name="clientSecret">KeyVault key secret value (available upon key creation only). </param>
+        /// <param name="secretIdentifier">KeyVault secret identifier.
+        /// <example>Possible formats:
+        /// Latest value https://key-vault-name.vault.azure.net/secrets/secret-name
+        /// Specific version https://key-vault-name.vault.azure.net/secrets/secret-name/version-id
+        /// </example>
+        /// </param>
         public KeyVaultProvider(string clientId, string clientSecret, string secretIdentifier)
         {
             Guard.AgainstEmpty(nameof(clientId), clientId);
@@ -31,12 +38,33 @@
         }
 
         /// <summary>
-        /// 
+        /// KeyVault connection string provider to work with Managed Service Idenity (MSI).
+        /// <remarks>
+        /// For MSI to work, AAD Application has to be granted Access Policy with Secret Get permission under the required KeyVault.
+        /// To work with MSI in a local development environment or where MSI agent is not pre-installed, an environment variable "AzureServicesAuthConnectionString" is required.
+        /// For more details, see https://azure.microsoft.com/en-us/resources/samples/app-service-msi-keyvault-dotnet/
+        /// </remarks>
         /// </summary>
-        /// <returns></returns>
+        public KeyVaultProvider() {}
+
+        /// <summary>
+        /// Retrieve Storage connection string using KeyVault.
+        /// </summary>
         public async Task<string> GetConnectionString()
         {
-            var client = new KeyVaultClient(GetToken);
+            KeyVaultClient client;
+
+            if (string.IsNullOrEmpty(clientId) == false)
+            {
+                client = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(GetToken));
+            }
+            else
+            {
+                var azureServiceTokenProvider = new AzureServiceTokenProvider();
+                var keyVaultTokenCallback = azureServiceTokenProvider.KeyVaultTokenCallback;
+
+                client = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(keyVaultTokenCallback));
+            }
 
             // possible KeyVaultErrorException : https://docs.microsoft.com/en-us/azure/key-vault/key-vault-dotnet2api-release-notes#exceptions
             // message is always in exception.Body.Error.Message && .Code (for a string code)
