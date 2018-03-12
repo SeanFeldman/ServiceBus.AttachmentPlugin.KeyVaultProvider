@@ -1,10 +1,10 @@
-![Icon](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/master/images/project-icon.png)
+![Icon](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/develop/images/project-icon.png)
 
 ### This is a KeyVault provider for  [ServiceBus.AttachmentPlugin](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin) add-in
 
-License: [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/master/LICENSE)
+License: [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/blob/develop/LICENSE)
 
-Build status: [![Develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider/master.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin) [![Develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin/develop.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider) 
+Build status: [![develop](https://img.shields.io/appveyor/ci/seanfeldman/ServiceBus-AttachmentPlugin-KeyVaultProvider/develop.svg?style=flat-square)](https://ci.appveyor.com/project/seanfeldman/ServiceBus-AttachmentPlugin)
 
 Opened issues: [![Issues](https://img.shields.io/github/issues-raw/badges/shields/website.svg)](https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider)
 
