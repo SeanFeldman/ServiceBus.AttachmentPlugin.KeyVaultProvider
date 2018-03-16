@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultProvider", "KeyVaul
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{EB7CA92F-7534-4C42-A4C3-90D04771E7EF}"
 	ProjectSection(SolutionItems) = preProject
+		..\appveyor.yml = ..\appveyor.yml
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeyVaultProvider.Tests", "KeyVaultProvider.Tests\KeyVaultProvider.Tests.csproj", "{849A44A8-076D-4C16-8E7C-A65D9481094A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultProvider.Tests", "KeyVaultProvider.Tests\KeyVaultProvider.Tests.csproj", "{849A44A8-076D-4C16-8E7C-A65D9481094A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

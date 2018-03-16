@@ -1,0 +1,73 @@
+skip_tags: true
+skip_commits:
+  files:
+    - '**/*.md'
+    - images/*
+matrix:
+  fast_finish: true 
+image: Previous Visual Studio 2017 #Visual Studio 2017 #use workaround image until https://github.com/appveyor/ci/issues/1404 is resolved
+environment:
+  matrix:
+    # First build
+    - DotNetRunTime: net461
+    # Second build
+    - DotNetRunTime: netcoreapp2.0
+
+#---------------------------------#
+#       restore nuget packages    #
+#---------------------------------#
+before_build:
+  - cmd: dotnet restore src\ServiceBus.AttachmentPlugin.KeyVaultProvider.sln
+  - cmd: echo %appveyor_build_version%
+  
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+ 
+build:
+  parallel: true                     # enable MSBuild parallel builds
+  project: src\ServiceBus.AttachmentPlugin.KeyVaultProvider.sln # path to Visual Studio project
+
+  # MSBuild verbosity level
+  verbosity: normal                  # quiet|minimal|normal|detailed
+
+test:
+  assemblies:
+    only:
+      - '**\*.tests.dll'
+
+after_build:
+##  7z ServiceBus.AttachmentPlugin.KeyVaultProvider-%GitVersion_MajorMinorPatch%.zip %APPVEYOR_BUILD_FOLDER%\src\KeyVaultProvider\bin\Release\*.*
+
+#---------------------------------#
+#      artifacts configuration    #
+#---------------------------------#
+
+artifacts:
+  - path: '**\*.nupkg'
+    name: 'ServiceBusExplorer-%GitVersion_MajorMinorPatch%'
+
+#---------------------------------#
+#     GitHub PR notifications     #
+#---------------------------------#
+
+notifications:
+  - provider: GitHubPullRequest
+    auth_token:
+      secure: QiboiypKc3UfEPsFVUDidWITZNKGxFul+YH4mgI3QcEqs+6dCLTRbaA5Z8Ft+hNx # encrypted token from GitHub
+    template: "{{#passed}}:white_check_mark:{{/passed}}{{#failed}}:x:{{/failed}} [Build {{&projectName}} {{buildVersion}} {{status}}]({{buildUrl}}) (commit {{commitUrl}} by @{{&commitAuthorUsername}})"
+
+#---------------------------------#
+#     deployment configuration    #
+#---------------------------------#
+
+deploy:
+  provider: NuGet
+  api_key: 
+    secure: eYxfKgaTQxSqKpz9R0s8XfvW2frKr5y3h2Ezwb+IJsYvSOPHnmtiwxPHHjQV/cPu # encrypted ServiceBus.AttachmentPlugin.KeyVaultProvider API key
+  artifact: /.*\.nupkg/
+  on:
+    branch: master
