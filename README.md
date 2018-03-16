@@ -25,7 +25,7 @@ To Install from the Nuget Package Manager Console
 Configuration and registration
 
 ```c#
-var provider = new KeyVaultProvider("client-id", "client-secret", "secret-identifier"); // secret-identifier only for MSI
+var provider = new KeyVaultProvider("client-id", "client-secret", "secret-identifier");
 var configuration = new AzureStorageAttachmentConfiguration(provider);
 
 var queueClient = new QueueClient(...);
@@ -38,6 +38,25 @@ messageReceiver.RegisterAzureStorageAttachmentPlugin(configuration);
 
 var message = await messageReceiver.ReceiveAsync();
 ```
+
+Using Managed Service Identity (MSI)
+
+```c#
+var provider = new KeyVaultProvider("secret-identifier");
+var configuration = new AzureStorageAttachmentConfiguration(provider);
+
+var queueClient = new QueueClient(...);
+queueClient.RegisterAzureStorageAttachmentPlugin(configuration);
+
+await queueClient.SendAsync(new Message(Encoding.UTF8.GetBytes("payload to transfer via storage account")));
+
+var messageReceiver = new MessageReceiver(...);
+messageReceiver.RegisterAzureStorageAttachmentPlugin(configuration);
+
+var message = await messageReceiver.ReceiveAsync();
+```
+
+Note: for local testing with MSI, an environment variable named `AzureServicesAuthConnectionString` has to be defined with a value `RunAs=App;AppId=<client-id>;TenantId=<tenant-id>;AppKey=<client-secret>`.
 
 ## Icon
 
