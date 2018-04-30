@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>KeyVault provider for Microsoft Azure ServiceBus attachment plugin</Description>
-    <Version>0.1.0-alpha0001</Version>
+    <Version>0.1.0-alpha0002</Version>
     <Authors>Sean Feldman</Authors>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <PackageTags>Azure;Service Bus;ServiceBus;.NET;AMQP;IoT;Queue;Topic;Attachment;Plugin</PackageTags>
@@ -31,7 +31,7 @@
   </Target>
 
   <ItemGroup>
-    <PackageReference Include="ServiceBus.AttachmentPlugin" Version="[2.2.0, 3.0.0)" />
+    <PackageReference Include="ServiceBus.AttachmentPlugin" Version="[2.2.0, 4.0.0)" />
     <PackageReference Include="Microsoft.Azure.KeyVault" Version="[2.3.2, 3.0.0)" />
     <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory" Version="[3.19.2, 4.0.0)" />
     <PackageReference Include="Microsoft.Azure.Services.AppAuthentication" Version="1.1.0-preview" />
