@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultProvider.Tests", "KeyVaultProvider.Tests\KeyVaultProvider.Tests.csproj", "{849A44A8-076D-4C16-8E7C-A65D9481094A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeyVaultProvider.TestApp", "KeyVaultProvider.TestApp\KeyVaultProvider.TestApp.csproj", "{585D937E-88FE-48C7-84EE-B2764798B903}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{849A44A8-076D-4C16-8E7C-A65D9481094A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{849A44A8-076D-4C16-8E7C-A65D9481094A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{849A44A8-076D-4C16-8E7C-A65D9481094A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{585D937E-88FE-48C7-84EE-B2764798B903}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{585D937E-88FE-48C7-84EE-B2764798B903}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{585D937E-88FE-48C7-84EE-B2764798B903}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{585D937E-88FE-48C7-84EE-B2764798B903}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
