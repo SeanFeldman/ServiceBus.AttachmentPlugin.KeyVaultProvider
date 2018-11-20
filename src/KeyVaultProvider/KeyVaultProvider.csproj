@@ -8,7 +8,7 @@
     <Authors>Sean Feldman</Authors>
     <PackageTags>Azure;Service Bus;ServiceBus;.NET;AMQP;IoT;Queue;Topic;Attachment;Plugin</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/develop/images/project-icon.png</PackageIconUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/develop/LICENSE</PackageLicenseUrl>
+    <PackageLicense>https://raw.githubusercontent.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider/develop/LICENSE</PackageLicense>
     <PackageProjectUrl>https://github.com/SeanFeldman/ServiceBus.AttachmentPlugin.KeyVaultProvider</PackageProjectUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
