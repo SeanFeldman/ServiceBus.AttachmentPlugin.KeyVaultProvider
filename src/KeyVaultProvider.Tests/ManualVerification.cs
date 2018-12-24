@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace KeyVaultProvider.Tests
 {
-    using ServiceBus.AttachmentPlugin;
+    using Microsoft.Azure.ServiceBus;
     using Xunit;
 
     public class ManualVerification
