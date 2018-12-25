@@ -1,10 +1,11 @@
 ﻿using Microsoft.Azure.Services.AppAuthentication;
 
-namespace ServiceBus.AttachmentPlugin
+namespace Microsoft.Azure.ServiceBus
 {
     using System;
     using System.Threading.Tasks;
     using Microsoft.Azure.KeyVault;
+    using Microsoft.Azure.ServiceBus;
     using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
     /// <summary>
