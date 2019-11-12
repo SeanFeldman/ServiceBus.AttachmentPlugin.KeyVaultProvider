@@ -12,7 +12,7 @@ namespace KeyVaultProviderTestApp
     {
         static async Task Main(string[] args)
         {
-            var connectionString = Environment.GetEnvironmentVariable("AzureServiceBus.ConnectionString");
+            var connectionString = Environment.GetEnvironmentVariable("AzureServiceBus_ConnectionString");
             var managementClient = new ManagementClient(connectionString);
             if (!await managementClient.QueueExistsAsync("attachments"))
             {

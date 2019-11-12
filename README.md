@@ -56,7 +56,7 @@ messageReceiver.RegisterAzureStorageAttachmentPlugin(configuration);
 var message = await messageReceiver.ReceiveAsync();
 ```
 
-Note: for local testing with MSI, an environment variable named `AzureServicesAuthConnectionString` has to be defined with a value `RunAs=App;AppId=<client-id>;TenantId=<tenant-id>;AppKey=<client-secret>`.
+Note: for local testing with MSI, an environment variable named `AzureServicesAuthConnectionString` has to be defined with a value `RunAs=App;AppId=<application-id>;TenantId=<directory-id>;AppKey=<client-secret>`.
 
 ## Icon
 
