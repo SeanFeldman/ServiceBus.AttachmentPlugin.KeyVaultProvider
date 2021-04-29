@@ -1,0 +1,17 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/src"
+  schedule:
+    interval: daily
+    time: "00:00"
+    timezone: Etc/UCT
+  open-pull-requests-limit: 10
+  target-branch: develop
+  ignore:
+  - dependency-name: Microsoft.NET.Test.Sdk
+    versions:
+    - "> 16.1.0, < 16.2"
+  - dependency-name: Microsoft.NET.Test.Sdk
+    versions:
+    - 16.9.1
